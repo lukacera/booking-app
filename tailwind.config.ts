@@ -10,7 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         headerBg: "#523703",
-        gold_1: " #FFD700"
+        gold_1: " #FFD700",
+        orange_1: "#de5d12"
       }
     },
   },

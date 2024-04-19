@@ -1,23 +1,32 @@
-import mainPageHotelPicture from "../../public/mainPageHotelPicture.jpg"
+import mainPageHotelPicture from "../../public/images/mainPageHotelPicture.jpg"
+
+import helperHotels from "./helpers/helperHotel.json"
 import Image from "next/image";
 import Header from "./Header";
+import { randomUUID } from "crypto"
+import Card from "./Card";
+
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Header div */}
       <Header />
-      {/* */}
-      <main>
+      {/* Main continaer */}
+      <main className="relative grid place-items-center">
         <Image src={mainPageHotelPicture} alt=""
-          className="w-full h-[80vh]" />
+          className="w-full h-[60vh]" priority={true} />
         {/* Cards container */}
-        <section>
-          <div className="bg-white w-20 aspect-square">
-            <p>
-              dfgdfgdf
-            </p>
-          </div>
+        <section className="absolute top-[70%] inset-x-auto mx-auto
+        flex gap-3">
+
+          {helperHotels.map(hotel => (
+            <div key={randomUUID()} className="relative">
+              <Card hotel={hotel} />
+            </div>
+          ))}
+
+
         </section>
       </main>
 
