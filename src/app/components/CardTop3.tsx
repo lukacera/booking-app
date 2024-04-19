@@ -53,7 +53,7 @@ const CardTop3: React.FC<{ hotel: any, index: number }> = ({ hotel, index }) => 
                 </div>
             </div>
             <div className={`flex items-center gap-3
-                  ${index === 0 ? "text-yellow-500" : index === 1 ? "text-gray-600"
+                  ${index === 0 ? "text-gold_1" : index === 1 ? "text-gray-600"
                     : index === 2 ? "text-yellow-700" : null
                 }`}>
                 <GiPodium size={35} />

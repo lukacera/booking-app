@@ -11,6 +11,7 @@ import { Lobster } from "next/font/google"
 
 import CardTop3 from "./components/CardTop3";
 import CardPopularLocation from "./components/CardPopularLocation";
+import Footer from "./components/Footer";
 
 const lobster = Lobster({ subsets: ["latin"], weight: "400" })
 
@@ -42,6 +43,7 @@ export default function Home() {
           </section>
         </div>
 
+        {/* Popular locations container */}
         <div className="my-80 w-[70%] mx-auto grid place-items-center gap-12">
           <span className={`text-3xl ${lobster.className}`}>
             Trending locations
@@ -55,6 +57,9 @@ export default function Home() {
           </div>
         </div>
       </main>
+
+      {/* Footer container */}
+      <Footer />
 
     </div >
   );
