@@ -28,7 +28,7 @@ const Footer = () => {
                     Embrace worry-free travel and embark on unforgettable journeys
                     with us. Experience the ease and reliability of our booking
                     service, and let us help you create memories that last a
-                    lifetime
+                    lifetime.
                 </p>
             </div>
             <div className="flex flex-col items-center my-5 gap-20 text-xl">
