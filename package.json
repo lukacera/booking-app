@@ -9,6 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "amadeus": "^10.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-async-handler": "^1.2.0",
     "gsap": "^3.12.5",
     "next": "14.2.2",
     "react": "^18",
@@ -17,6 +21,7 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@types/express": "^4.17.21",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
