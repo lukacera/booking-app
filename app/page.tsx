@@ -1,10 +1,10 @@
-import mainPageHotelPicture from "../../public/images/mainPageHotelPicture.jpg"
+"use client"
+import mainPageHotelPicture from "../public/images/mainPageHotelPicture.jpg"
 
-import helperHotels from "./helpers/helperHotel.json"
-import helperLocations from "./helpers/helperLocations.json"
+import helperHotels from "../app/helpers/helperHotels.json"
+import helperLocations from "../app/helpers/helperLocations.json"
 import Image from "next/image";
 import Header from "./components/Header";
-import { randomUUID } from "crypto"
 
 
 import { Lobster } from "next/font/google"
@@ -12,10 +12,24 @@ import { Lobster } from "next/font/google"
 import CardTop3 from "./components/CardTop3";
 import CardPopularLocation from "./components/CardPopularLocation";
 import Footer from "./components/Footer";
-
+import { useEffect } from "react";
+import { v4 as uuidv4 } from "uuid"
 const lobster = Lobster({ subsets: ["latin"], weight: "400" })
 
 export default function Home() {
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch("/api")
+        const json = await res.json()
+        console.log(json)
+      } catch (error) {
+        console.log("Error occured while fetching data! " + error)
+      }
+    }
+    fetchData()
+  }, [])
   return (
     <div className="min-h-screen">
       {/* Header div */}
@@ -34,7 +48,7 @@ export default function Home() {
             </h3>
             <div className="flex gap-3">
               {helperHotels.map((hotel, index) => (
-                <div key={randomUUID()}>
+                <div key={uuidv4()}>
                   <CardTop3 hotel={hotel} index={index} />
 
                 </div>
@@ -50,7 +64,7 @@ export default function Home() {
           </span>
           <div className="grid grid-cols-2 gap-5">
             {helperLocations.map(location => (
-              <div key={randomUUID()} >
+              <div key={uuidv4()} >
                 <CardPopularLocation location={location} />
               </div>
             ))}

@@ -1,0 +1,17 @@
+[
+    {
+        "image": "/images/costaricaImage.jpg",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida nisi sit amet velit pretium, ac tristique justo finibus. Mauris rutrum quam non consequat bibendum. Vivamus ullamcorper, turpis id maximus tincidunt, libero neque commodo est, vel posuere tortor justo sit amet nunc. Sed vehicula, lacus id mollis lobortis, purus lorem ultrices lorem, id fringilla justo mi a ligula.",
+        "name": "Costarica"
+    },
+    {
+        "image": "/images/madridImage.jpg",
+        "description": "Phasellus vitae ipsum felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquet dolor sit amet velit suscipit dapibus. Vivamus elementum, mi eget accumsan efficitur, neque lacus consequat tortor, id sagittis magna odio id odio. Aliquam erat volutpat.",
+        "name": "Spain, Madrid"
+    },
+    {
+        "image": "/images/lisabonImage.jpg",
+        "description": "Fusce varius efficitur purus vitae facilisis. Maecenas malesuada lorem sed risus ultrices, sed venenatis orci congue. Nullam tincidunt auctor nisl, sed consequat velit fermentum eget. Integer interdum sodales urna at tincidunt. Sed gravida, eros sit amet posuere efficitur, libero enim iaculis augue, nec convallis dui purus vel metus.",
+        "name": "Portugal, Lisabon"
+    }
+]
