@@ -35,7 +35,7 @@ export default function Home() {
       {/* Header div */}
       <Header />
       {/* Main continaer */}
-      <main className="">
+      <main>
         <div className="relative grid place-items-center">
           <Image src={mainPageHotelPicture} alt=""
             className="w-full h-[70vh]" priority={true} />
