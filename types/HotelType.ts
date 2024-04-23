@@ -11,7 +11,7 @@ export type HotelType = {
     address: {
         countryCode: string;
     };
-    amenities: string[];
-    rating: number;
-    lastUpdate: string;
+    amenities?: string[];
+    rating?: number;
+    lastUpdate?: string;
 };

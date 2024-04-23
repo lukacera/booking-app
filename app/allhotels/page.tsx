@@ -1,8 +1,8 @@
 "use client"
-import React, { useState } from "react"
+import React, { ReactElement, useState } from "react"
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { FaWifi, FaParking, FaBus, FaUmbrellaBeach, FaHotTub, FaSquare } from "react-icons/fa";
+import { FaWifi, FaParking, FaBus, FaUmbrellaBeach, FaHotTub, FaSquare, FaStar } from "react-icons/fa";
 import { TbAirConditioning, TbMassage } from "react-icons/tb";
 import { IoMdRestaurant } from "react-icons/io";
 import {
@@ -16,6 +16,10 @@ import { PiTelevisionSimpleFill } from "react-icons/pi";
 import { FilterType } from "../../types/FilterType"
 
 import { v4 as uuidv4 } from "uuid"
+
+import helperAllHotels from "../../helpers/helperAllHotels.json"
+import SingleHotel from "../../components/allHotelsPage/SingleHotel";
+
 const AllHotels = () => {
     const [allFilters, setAllFilters] = useState<FilterType[]>([
         {
@@ -108,35 +112,45 @@ const AllHotels = () => {
         <>
             <Header />
             {/* Set mt to 8.5 and calculate height based on height of header */}
-            <main className="grid grid-cols-[15%_85%] mt-[8.5rem] min-h-[calc(100vh-8.5rem)]
-            bg-white">
+            <main className="grid grid-cols-[25%_75%] mt-[8.5rem] min-h-[calc(100vh-8.5rem)]
+            bg-white w-[80vw] mx-auto">
                 {/* Sidebar with all filters */}
-                <div className="w-full flex flex-col items-center
-                py-16 border-r-2 border-black">
-                    <h4 className="font-bold text-xl">
+                <div className="w-full flex flex-col items-center pt-32 sticky top-[8.5rem]">
+                    <h4 className="font-bold text-xl mb-10">
                         All filters
                     </h4>
-                    <div className="grid place-items-center gap-3 my-6">
+                    <div className="gap-3 my-6 grid place-items-center px-2">
                         {allFilters.map(filter => (
-                            <div key={uuidv4()} className="w-full grid items-center 
-                            grid-cols-[10%_80%_10%] gap-2">
+                            <div key={uuidv4()} className="w-full grid items-center
+                                grid-cols-[10%_75%_15%] gap-2">
                                 {filter.icon}
                                 <span>
                                     {filter.name}
                                 </span>
-                                <FaSquare className="text-white border-2 
-                                border-black cursor-pointer" />
+                                <FaSquare className="text-white border-2
+                                    border-black cursor-pointer" />
                             </div>
                         ))}
                     </div>
-                    <span className="px-2 py-4 rounded-xl border-2  
-                    bg-brown_1 text-white">
+                    <span className="px-2 py-4 rounded-xl border-2
+                        bg-brown_1 text-white">
                         Apply filters
                     </span>
                 </div>
 
-                <div className="w-full">
-                    gdfgdf
+                {/* Main part of page / all hotels */}
+
+                <div className="grid grid-rows-[10rem,auto]">
+                    <div className="grid place-items-center">
+                        <h2 className="font-bold text-2xl">
+                            Hotels in Paris
+                        </h2>
+                    </div>
+                    <div className="w-[90%] mx-auto mb-20 flex flex-col gap-10">
+                        {helperAllHotels.map(hotel => (
+                            <SingleHotel hotel={hotel} key={uuidv4()} />
+                        ))}
+                    </div>
                 </div>
             </main>
             <Footer />

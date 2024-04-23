@@ -1,99 +1,197 @@
 [
     {
         "chainCode": "AC",
-        "iataCode": "PAR",
-        "dupeId": 700189764,
-        "name": "FABRIC",
-        "hotelId": "ACPARD83",
+        "iataCode": "BEG",
+        "dupeId": 700138893,
+        "name": "KASINA HOTEL",
+        "hotelId": "ACBEGF20",
         "geoCode": {
-            "latitude": 48.87148,
-            "longitude": 2.32713
+            "latitude": 44.81151,
+            "longitude": 20.46155
         },
         "address": {
-            "countryCode": "FR"
+            "countryCode": "RS"
         },
-        "amenities": [
-            "WIFI",
-            "PARKING"
-        ],
-        "rating": 4,
+        "lastUpdate": "2023-06-15T11:11:15"
+    },
+    {
+        "chainCode": "BW",
+        "iataCode": "BEG",
+        "dupeId": 700057397,
+        "name": "BEST WESTERN HOTEL M",
+        "hotelId": "BWBEG800",
+        "geoCode": {
+            "latitude": 44.76813,
+            "longitude": 20.47656
+        },
+        "address": {
+            "countryCode": "RS"
+        },
+        "lastUpdate": "2023-06-15T09:42:24"
+    },
+    {
+        "chainCode": "DH",
+        "iataCode": "BEG",
+        "dupeId": 501101168,
+        "name": "MOSKVA HOTEL BELGRADE",
+        "hotelId": "DHBEGAAM",
+        "geoCode": {
+            "latitude": 44.79489,
+            "longitude": 20.44588
+        },
+        "address": {
+            "countryCode": "RS"
+        },
+        "lastUpdate": "2023-06-15T11:05:53"
+    },
+    {
+        "chainCode": "EP",
+        "iataCode": "BEG",
+        "dupeId": 700176737,
+        "name": "VILLA JELENA",
+        "hotelId": "EPBEGVJL",
+        "geoCode": {
+            "latitude": 44.78202,
+            "longitude": 20.45737
+        },
+        "address": {
+            "countryCode": "RS"
+        },
         "lastUpdate": "2023-06-15T10:30:52"
     },
     {
-        "chainCode": "AC",
-        "iataCode": "PAR",
-        "dupeId": 501691538,
-        "name": "APPARTEMENTS HELZEAR CHAMPS ELYSEES",
-        "hotelId": "ACPARF33",
+        "chainCode": "FG",
+        "iataCode": "BEG",
+        "dupeId": 700080951,
+        "name": "ZIRA HOTEL BEOGRAD",
+        "hotelId": "FGBEGZIR",
         "geoCode": {
-            "latitude": 48.86914,
-            "longitude": 2.29826
+            "latitude": 44.80875,
+            "longitude": 20.48284
         },
         "address": {
-            "countryCode": "FR"
+            "countryCode": "RS"
         },
-        "amenities": [
-            "WIFI"
-        ],
-        "rating": 4,
-        "lastUpdate": "2023-06-15T11:11:37"
-    },
-    {
-        "chainCode": "AC",
-        "iataCode": "PAR",
-        "dupeId": 700021957,
-        "name": "BALMORAL",
-        "hotelId": "ACPARE72",
-        "geoCode": {
-            "latitude": 48.87605,
-            "longitude": 2.29381
-        },
-        "address": {
-            "countryCode": "FR"
-        },
-        "amenities": [
-            "WIFI"
-        ],
-        "rating": 4,
-        "lastUpdate": "2023-06-15T11:08:45"
-    },
-    {
-        "chainCode": "AC",
-        "iataCode": "PAR",
-        "dupeId": 700189679,
-        "name": "MARQUIS FAUBOURG SAINT HONORE",
-        "hotelId": "ACPARD79",
-        "geoCode": {
-            "latitude": 48.87148,
-            "longitude": 2.32713
-        },
-        "address": {
-            "countryCode": "FR"
-        },
-        "amenities": [
-            "WIFI"
-        ],
-        "rating": 4,
         "lastUpdate": "2023-06-15T10:36:38"
     },
     {
-        "chainCode": "AC",
-        "iataCode": "PAR",
-        "dupeId": 700029517,
-        "name": "VILLA SAXE EIFFEL",
-        "hotelId": "ACPARE68",
+        "chainCode": "FG",
+        "iataCode": "BEG",
+        "dupeId": 700145783,
+        "name": "BOUTIQUE HOTEL TASH BELGRADE",
+        "hotelId": "FGBEGTHL",
         "geoCode": {
-            "latitude": 48.84952,
-            "longitude": 2.30964
+            "latitude": 44.80555,
+            "longitude": 20.46971
         },
         "address": {
-            "countryCode": "FR"
+            "countryCode": "RS"
         },
-        "amenities": [
-            "SPA",
-            "WIFI"
-        ],
-        "rating": 4,
-        "lastUpdate": "2023-06-15T10:10:57"
+        "lastUpdate": "2023-06-15T10:24:51"
+    },
+    {
+        "chainCode": "GT",
+        "iataCode": "BEG",
+        "dupeId": 700154888,
+        "name": "TULIP INN PUTNIK BELGRADE",
+        "hotelId": "GTBEGPUT",
+        "geoCode": {
+            "latitude": 44.83015,
+            "longitude": 20.41213
+        },
+        "address": {
+            "countryCode": "RS"
+        },
+        "lastUpdate": "2023-06-15T10:19:05"
+    },
+    {
+        "chainCode": "HI",
+        "iataCode": "BEG",
+        "dupeId": 501950106,
+        "name": "HOLIDAY INN EXP BELGRADE",
+        "hotelId": "HIBEG66A",
+        "geoCode": {
+            "latitude": 44.80729,
+            "longitude": 20.4806
+        },
+        "address": {
+            "countryCode": "RS"
+        },
+        "lastUpdate": "2023-06-15T11:21:16"
+    },
+    {
+        "chainCode": "HI",
+        "iataCode": "BEG",
+        "dupeId": 700079606,
+        "name": "HOLIDAY INN BELGRADE",
+        "hotelId": "HIBEGEF1",
+        "geoCode": {
+            "latitude": 44.81381,
+            "longitude": 20.41337
+        },
+        "address": {
+            "countryCode": "RS"
+        },
+        "lastUpdate": "2023-06-15T10:08:05"
+    },
+    {
+        "chainCode": "HO",
+        "iataCode": "BEG",
+        "dupeId": 700077882,
+        "name": "REX HOTEL",
+        "hotelId": "HOBEGRHH",
+        "geoCode": {
+            "latitude": 44.80318,
+            "longitude": 20.45479
+        },
+        "address": {
+            "countryCode": "RS"
+        },
+        "lastUpdate": "2023-06-15T11:11:15"
+    },
+    {
+        "chainCode": "HO",
+        "iataCode": "BEG",
+        "dupeId": 700176741,
+        "name": "ZELEZNICAR KONACISTE HOTEL",
+        "hotelId": "HOBEGZKH",
+        "geoCode": {
+            "latitude": 44.80449,
+            "longitude": 20.45294
+        },
+        "address": {
+            "countryCode": "RS"
+        },
+        "lastUpdate": "2023-06-15T11:11:26"
+    },
+    {
+        "chainCode": "HS",
+        "iataCode": "BEG",
+        "dupeId": 700134676,
+        "name": "OASIS",
+        "hotelId": "HSBEGACD",
+        "geoCode": {
+            "latitude": 44.85937,
+            "longitude": 20.35601
+        },
+        "address": {
+            "countryCode": "RS"
+        },
+        "lastUpdate": "2023-06-15T10:34:32"
+    },
+    {
+        "chainCode": "HS",
+        "iataCode": "BEG",
+        "dupeId": 700139095,
+        "name": "HOTEL N",
+        "hotelId": "HSBEGACB",
+        "geoCode": {
+            "latitude": 44.76692,
+            "longitude": 20.47971
+        },
+        "address": {
+            "countryCode": "RS"
+        },
+        "lastUpdate": "2023-06-15T11:05:10"
     }
 ]
