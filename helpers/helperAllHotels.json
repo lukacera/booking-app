@@ -1,0 +1,99 @@
+[
+    {
+        "chainCode": "AC",
+        "iataCode": "PAR",
+        "dupeId": 700189764,
+        "name": "FABRIC",
+        "hotelId": "ACPARD83",
+        "geoCode": {
+            "latitude": 48.87148,
+            "longitude": 2.32713
+        },
+        "address": {
+            "countryCode": "FR"
+        },
+        "amenities": [
+            "WIFI",
+            "PARKING"
+        ],
+        "rating": 4,
+        "lastUpdate": "2023-06-15T10:30:52"
+    },
+    {
+        "chainCode": "AC",
+        "iataCode": "PAR",
+        "dupeId": 501691538,
+        "name": "APPARTEMENTS HELZEAR CHAMPS ELYSEES",
+        "hotelId": "ACPARF33",
+        "geoCode": {
+            "latitude": 48.86914,
+            "longitude": 2.29826
+        },
+        "address": {
+            "countryCode": "FR"
+        },
+        "amenities": [
+            "WIFI"
+        ],
+        "rating": 4,
+        "lastUpdate": "2023-06-15T11:11:37"
+    },
+    {
+        "chainCode": "AC",
+        "iataCode": "PAR",
+        "dupeId": 700021957,
+        "name": "BALMORAL",
+        "hotelId": "ACPARE72",
+        "geoCode": {
+            "latitude": 48.87605,
+            "longitude": 2.29381
+        },
+        "address": {
+            "countryCode": "FR"
+        },
+        "amenities": [
+            "WIFI"
+        ],
+        "rating": 4,
+        "lastUpdate": "2023-06-15T11:08:45"
+    },
+    {
+        "chainCode": "AC",
+        "iataCode": "PAR",
+        "dupeId": 700189679,
+        "name": "MARQUIS FAUBOURG SAINT HONORE",
+        "hotelId": "ACPARD79",
+        "geoCode": {
+            "latitude": 48.87148,
+            "longitude": 2.32713
+        },
+        "address": {
+            "countryCode": "FR"
+        },
+        "amenities": [
+            "WIFI"
+        ],
+        "rating": 4,
+        "lastUpdate": "2023-06-15T10:36:38"
+    },
+    {
+        "chainCode": "AC",
+        "iataCode": "PAR",
+        "dupeId": 700029517,
+        "name": "VILLA SAXE EIFFEL",
+        "hotelId": "ACPARE68",
+        "geoCode": {
+            "latitude": 48.84952,
+            "longitude": 2.30964
+        },
+        "address": {
+            "countryCode": "FR"
+        },
+        "amenities": [
+            "SPA",
+            "WIFI"
+        ],
+        "rating": 4,
+        "lastUpdate": "2023-06-15T10:10:57"
+    }
+]
