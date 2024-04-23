@@ -1,17 +1,17 @@
 "use client"
 import mainPageHotelPicture from "../public/images/mainPageHotelPicture.jpg"
 
-import helperHotels from "../app/helpers/helperHotels.json"
-import helperLocations from "../app/helpers/helperLocations.json"
+import helperHotels from "../helpers/helperHotels.json"
+import helperLocations from "../helpers/helperLocations.json"
 import Image from "next/image";
-import Header from "./components/Header";
+import Header from "../components/Header";
 
 
 import { Lobster } from "next/font/google"
 
-import CardTop3 from "./components/CardTop3";
-import CardPopularLocation from "./components/CardPopularLocation";
-import Footer from "./components/Footer";
+import CardTop3 from "../components/CardTop3";
+import CardPopularLocation from "../components/CardPopularLocation";
+import Footer from "../components/Footer";
 import { useEffect } from "react";
 import { v4 as uuidv4 } from "uuid"
 const lobster = Lobster({ subsets: ["latin"], weight: "400" })
