@@ -53,9 +53,20 @@ const SingleHotel: React.FC<{ hotel: HotelType }> = ({ hotel }) => {
         return stars;
     }
 
+    const fetchData = async () => {
+        try {
+            const res = await fetch(`/api/hotels/${hotel.hotelId}`)
+            const data = await res.json()
+
+            console.log(data)
+        } catch (error) {
+            console.log("Error occured: " + error)
+        }
+    }
     return (
         <div key={uuidv4()} className="flex border-r-2
-        border-gray-200">
+        border-gray-200"
+            onClick={() => fetchData()}>
             <div className="pl-4 pb-4 pt-4 pr-2">
                 <Image alt="" src={defaultHotelImg}
                     width={200} height={200}
