@@ -1,12 +1,16 @@
 import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
+import { NextRequest } from 'next/server'
 
 
 /*
 This function returns access token which will be passed to
 other GET functions for handling API calls
 */
-export async function middleware(request: NextRequest) {
+
+interface CustomRequest extends NextRequest {
+    token: string
+}
+export async function middleware(req: CustomRequest) {
 
     // Pass required credentials into request body 
     const requestBody = {
@@ -34,6 +38,7 @@ export async function middleware(request: NextRequest) {
             const data = await response.json();
 
             // Pass access token to next function
+            req.token = data.access_token
             return NextResponse.json(data.access_token);
         } else {
             throw new Error(`Failed to fetch access token: ${response.statusText}`);
@@ -48,5 +53,5 @@ export async function middleware(request: NextRequest) {
 
 // Match paths in which middleware will take place/effect
 export const config = {
-    matcher: '/app/api/hotels/:path', // Set up wildcard, so every file under hotels will call this middleware 
+    matcher: '/'
 }
