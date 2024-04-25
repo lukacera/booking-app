@@ -1,12 +1,7 @@
 import { NextResponse, NextRequest } from 'next/server'
 import queryString from 'query-string';
 
-interface CustomRequest extends NextRequest {
-    context: {
-        token: string;
-    }
-}
-export async function middleware(req: CustomRequest) {
+export async function middleware(req: NextRequest) {
 
     // Pass required credentials into request body 
     const requestBody = queryString.stringify({
@@ -30,22 +25,20 @@ export async function middleware(req: CustomRequest) {
 
         // Check if the request was successful
         if (response.ok) {
-            console.log("Response is ok!")
             // Parse the response JSON
             const data = await response.json();
 
             const requestHeaders = new Headers(req.headers)
             requestHeaders.set('x-access-token', data.access_token)
 
+
             // You can also set request headers in NextResponse.rewrite
-            const res = NextResponse.next({
+            return NextResponse.next({
                 request: {
-                    // New request headers
                     headers: requestHeaders
                 },
             })
 
-            return res;
         } else {
             throw new Error(`Failed to fetch access token: ${response.statusText}`);
         }
@@ -55,4 +48,8 @@ export async function middleware(req: CustomRequest) {
 
         return NextResponse.json({ message: "Authentication failed!" })
     }
+}
+
+export const config = {
+    matcher: '/api/:path*',
 }

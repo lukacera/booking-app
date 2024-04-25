@@ -58,7 +58,6 @@ const SingleHotel: React.FC<{ hotel: HotelType }> = ({ hotel }) => {
             const res = await fetch(`/api/hotels/${hotel.hotelId}`)
             const data = await res.json()
 
-            console.log(data)
         } catch (error) {
             console.log("Error occured: " + error)
         }

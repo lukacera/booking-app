@@ -18,18 +18,7 @@ const lobster = Lobster({ subsets: ["latin"], weight: "400" })
 
 export default function Home() {
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetch("/api")
-        const json = await res.json()
-        console.log(json)
-      } catch (error) {
-        console.log("Error occured while fetching data! " + error)
-      }
-    }
-    fetchData()
-  }, [])
+
   return (
     <div className="min-h-screen">
       {/* Header div */}

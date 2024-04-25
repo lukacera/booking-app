@@ -4,19 +4,16 @@ import { NextRequest, NextResponse } from 'next/server'
     Returns list of hotels in a city, by IATA code
 */
 
-interface CustomRequest extends NextRequest {
-    context: {
-        token: string;
-    }
-}
 
-export const GET = async (req: CustomRequest, { params }: { params: { city: string } }) => {
+export const GET = async (req: NextRequest, { params }: { params: { city: string } }) => {
 
     try {
+        // Get token from header which is set by middleware 
         const token = req.headers.get("x-access-token")
+
+        // Get city from route params
         const city = params.city
-        console.log(city)
-        console.log(`Token: ${token}`)
+
         const requestOptions = {
             method: "GET",
             headers: {
@@ -32,8 +29,8 @@ export const GET = async (req: CustomRequest, { params }: { params: { city: stri
 
         const data = await response.json();
 
+        // Return data
         return NextResponse.json({
-            message: "Success!",
             data: data
         })
     } catch (error) {
