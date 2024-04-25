@@ -1,23 +1,18 @@
-import { NextResponse } from 'next/server'
-import { NextRequest } from 'next/server'
-
-
-/*
-This function returns access token which will be passed to
-other GET functions for handling API calls
-*/
+import { NextResponse, NextRequest } from 'next/server'
+import queryString from 'query-string';
 
 interface CustomRequest extends NextRequest {
     token: string
 }
+
 export async function middleware(req: CustomRequest) {
 
     // Pass required credentials into request body 
-    const requestBody = {
+    const requestBody = queryString.stringify({
         grant_type: 'client_credentials',
         client_id: process.env.AMADEUS_KEY,
         client_secret: process.env.AMADEUS_SECRET
-    };
+    });
 
     // Request options for fetching
     const requestOptions = {
@@ -25,7 +20,7 @@ export async function middleware(req: CustomRequest) {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify(requestBody),
+        body: requestBody
     };
 
     try {
@@ -34,12 +29,14 @@ export async function middleware(req: CustomRequest) {
 
         // Check if the request was successful
         if (response.ok) {
+            console.log("Response is ok!")
             // Parse the response JSON
             const data = await response.json();
 
-            // Pass access token to next function
-            req.token = data.access_token
-            return NextResponse.json(data.access_token);
+            console.log("Data in middleware:")
+            console.log(data)
+
+            return data.access_token
         } else {
             throw new Error(`Failed to fetch access token: ${response.statusText}`);
         }
@@ -49,9 +46,4 @@ export async function middleware(req: CustomRequest) {
 
         return NextResponse.json({ message: "Authentication failed!" })
     }
-}
-
-// Match paths in which middleware will take place/effect
-export const config = {
-    matcher: '/'
 }
