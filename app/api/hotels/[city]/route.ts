@@ -1,24 +1,25 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextRequest, NextResponse } from 'next/server'
 
 /*
     Returns list of hotels in a city, by IATA code
 */
-interface CustomRequest extends NextApiRequest {
-    token: string
+
+interface CustomRequest extends NextRequest {
+    context: {
+        token: string;
+    }
 }
 
-export const GET = async (req: CustomRequest, { params }: { params: { city: string } },
-    res: NextApiResponse) => {
+export const GET = async (req: CustomRequest, { params }: { params: { city: string } }) => {
+
     try {
-        const token = req.token
-        console.log(req)
-        console.log(`Token: ${token}`)
+        const token = req.headers.get("x-access-token")
         const city = params.city
         console.log(city)
+        console.log(`Token: ${token}`)
         const requestOptions = {
             method: "GET",
             headers: {
-                "Content-type": "application/json",
                 "Authorization": `Bearer ${token}`
             },
 
@@ -30,12 +31,13 @@ export const GET = async (req: CustomRequest, { params }: { params: { city: stri
         }
 
         const data = await response.json();
-        return res.json({
-            message: "Luka je prijavljen!",
+
+        return NextResponse.json({
+            message: "Success!",
             data: data
-        });
+        })
     } catch (error) {
         console.error('Error:', error);
-        return res.status(404).json({ message: "Error occured" });
+        return NextResponse.json({ message: "Error occured" });
     }
 }
