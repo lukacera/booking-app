@@ -1,8 +1,8 @@
 "use client"
-import React, { ReactElement, useState } from "react"
+import React, { useState } from "react"
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { FaWifi, FaParking, FaBus, FaUmbrellaBeach, FaHotTub, FaSquare, FaStar } from "react-icons/fa";
+import { FaWifi, FaParking, FaBus, FaUmbrellaBeach, FaHotTub, FaSquare } from "react-icons/fa";
 import { TbAirConditioning, TbMassage } from "react-icons/tb";
 import { IoMdRestaurant } from "react-icons/io";
 import {
@@ -18,7 +18,7 @@ import { FilterType } from "../../types/FilterType"
 import { v4 as uuidv4 } from "uuid"
 
 import helperAllHotels from "../../helpers/helperAllHotels.json"
-import SingleHotel from "../../components/allHotelsPage/SingleHotel";
+import SingleHotel from "../../components/allHotelsPageComponents/SingleHotel";
 
 const AllHotels = () => {
     const [allFilters, setAllFilters] = useState<FilterType[]>([
