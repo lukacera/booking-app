@@ -16,7 +16,7 @@ export const GET = async (req: NextRequest, { params }: { params: { substring: s
             },
 
         }
-        const response = await fetch(`https://test.api.amadeus.com/v1/reference-data/locations/cities?keyword=${keyword}&max=5`, requestOptions)
+        const response = await fetch(`https://test.api.amadeus.com/v1/reference-data/locations/cities?keyword=${keyword}&max=8`, requestOptions)
 
         if (!response.ok) {
             throw new Error("Failed to fetch data!");
