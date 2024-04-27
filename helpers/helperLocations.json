@@ -1,0 +1,22 @@
+[
+    {
+        "image": "/images/costaricaImage.jpg",
+        "flag": "/images/costaricaFlag.png",
+        "place": "Costarica"
+    },
+    {
+        "image": "/images/madridImage.jpg",
+        "flag": "/images/spainFlag.png",
+        "place": "Spain, Madrid"
+    },
+    {
+        "image": "/images/lisabonImage.jpg",
+        "flag": "/images/portugalFlag.png",
+        "place": "Portugal, Lisabon"
+    },
+    {
+        "image": "/images/newYorkImage.jpg",
+        "flag": "/images/usaFlag.png",
+        "place": "USA, New York"
+    }
+]
