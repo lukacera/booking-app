@@ -1,18 +1,17 @@
 import React, { useCallback, useEffect, useState } from "react";
-import Logo from "./Logo";
+import Logo from "./headerComponents/Logo";
 import { FaLocationDot } from "react-icons/fa6";
 import { debounce } from "lodash";
 import { fetchIataCodes } from "../utils/fetchDataHeader";
 import { CityType } from "../types/CityType"
-import DropdownSearchCities from "./allHotelsPageComponents/DropdownSearchCities";
-
+import DropdownSearchCities from "./headerComponents/DropdownSearchCities";
 const Header: React.FC = () => {
 
     const [citiesHeader, setCitiesHeader] = useState<CityType[]>([])
 
     const [searchQuery, setSearchQuery] = useState<string>("")
 
-    const [isFetching, setIsFetching] = useState<boolean>(true)
+    const [isFetching, setIsFetching] = useState<boolean>(false)
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const debounceFetch = useCallback(
@@ -28,6 +27,7 @@ const Header: React.FC = () => {
             return setCitiesHeader([])
         }
         const fetchData = async () => {
+            setIsFetching(true)
             const fetchedData = await fetchIataCodes(searchQuery);
             fetchedData ? setCitiesHeader(fetchedData) : setCitiesHeader([])
             setIsFetching(false)
@@ -63,19 +63,16 @@ const Header: React.FC = () => {
                         onChange={handleChange} // Attach the debounced function to the onChange event
                     />
 
-                    {!isFetching && citiesHeader.length > 0 && (
-                        < DropdownSearchCities
-                            citiesHeader={citiesHeader} />
-                    )}
+                    {/* 
+                        Dropdown will render his elements based on variables 
+                        (show cities, loading, no results found) 
+                    */}
+                    < DropdownSearchCities
+                        citiesHeader={citiesHeader}
+                        isFetching={isFetching}
+                        searchQuery={searchQuery} />
 
-                    {!isFetching && citiesHeader.length === 0 && searchQuery.length > 2 && (
-                        <div className="absolute top-16 left-0 bg-white z-10
-                                w-full py-3 text-center rounded-sm">
-                            <span className="font-bold">
-                                No results found!
-                            </span>
-                        </div>
-                    )}
+
 
                 </div>
             </div>

@@ -20,6 +20,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.1.0",
+    "react-loader-spinner": "^6.1.6",
+    "react-loaders": "^3.0.1",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
