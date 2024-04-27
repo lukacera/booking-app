@@ -5,6 +5,7 @@ import { debounce } from "lodash";
 import { fetchIataCodes } from "../utils/fetchDataHeader";
 import { CityType } from "../types/CityType"
 import DropdownSearchCities from "./headerComponents/DropdownSearchCities";
+
 const Header: React.FC = () => {
 
     const [citiesHeader, setCitiesHeader] = useState<CityType[]>([])

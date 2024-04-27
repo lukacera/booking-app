@@ -1,7 +1,7 @@
 "use client"
-import React, { useState } from "react"
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import React, { useContext, useEffect, useState } from "react"
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
 import { FaWifi, FaParking, FaBus, FaUmbrellaBeach, FaHotTub, FaSquare } from "react-icons/fa";
 import { TbAirConditioning, TbMassage } from "react-icons/tb";
 import { IoMdRestaurant } from "react-icons/io";
@@ -13,15 +13,18 @@ import { LuBaby } from "react-icons/lu";
 import { BsUniversalAccess } from "react-icons/bs";
 import { BiFridge } from "react-icons/bi";
 import { PiTelevisionSimpleFill } from "react-icons/pi";
-import { FilterType } from "../../types/FilterType"
+import { FilterType } from "../../../types/FilterType"
 
 import { v4 as uuidv4 } from "uuid"
 
-import helperAllHotels from "../../helpers/helperAllHotels.json"
-import SingleHotel from "../../components/allHotelsPageComponents/SingleHotel";
+import SingleHotel from "../../../components/allHotelsPageComponents/SingleHotel";
+import { SelectedCityContext } from "../../../contexts/SelectedCityHook";
+import { HotelType } from "../../../types/HotelType";
+import { useParams } from "next/navigation";
 
 const AllHotels = () => {
-    const [allFilters, setAllFilters] = useState<FilterType[]>([
+
+    const allFilters: FilterType[] = [
         {
             icon: <FaWifi />,
             name: "Wifi"
@@ -106,7 +109,26 @@ const AllHotels = () => {
             icon: <MdRoomService />,
             name: "Room Service"
         }
-    ])
+    ]
+
+    const { selectedCity } = useContext(SelectedCityContext)
+
+    const [hotels, setHotels] = useState<HotelType[]>([])
+
+    const searchParamsIataCode = useParams()
+
+    useEffect(() => {
+        const fetchHotels = async () => {
+            console.log(searchParamsIataCode.city)
+            const response = await fetch(`/api/hotels/${searchParamsIataCode.city}`);
+            const fetchedData = await response.json()
+            console.log(fetchedData.data.data)
+            setHotels(fetchedData.data.data)
+        }
+
+        console.log("Fetching selected city...")
+        fetchHotels()
+    }, [searchParamsIataCode])
 
     return (
         <>
@@ -143,11 +165,11 @@ const AllHotels = () => {
                 <div className="grid grid-rows-[10rem,auto]">
                     <div className="grid place-items-center">
                         <h2 className="font-bold text-2xl">
-                            Hotels in Paris
+                            Hotels in { }
                         </h2>
                     </div>
                     <div className="w-[90%] mx-auto mb-20 flex flex-col gap-10">
-                        {helperAllHotels.map(hotel => (
+                        {hotels.length > 0 && hotels.map(hotel => (
                             <SingleHotel hotel={hotel} key={uuidv4()} />
                         ))}
                     </div>

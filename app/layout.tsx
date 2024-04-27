@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
-
-const inter = Inter({ subsets: ["latin"] });
+import { SelectedCityProvider } from "../contexts/SelectedCityHook";
 import "../globals.css"
+const inter = Inter({ subsets: ["latin"] });
+
 export const metadata: Metadata = {
   title: "Booking app",
 };
@@ -15,7 +15,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <SelectedCityProvider>
+          {children}
+        </SelectedCityProvider>
+      </body>
     </html>
   );
 }

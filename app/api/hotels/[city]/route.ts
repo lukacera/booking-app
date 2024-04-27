@@ -14,6 +14,7 @@ export const GET = async (req: NextRequest, { params }: { params: { city: string
         // Get city from route params
         const city = params.city
 
+        console.log("Fetching...")
         const requestOptions = {
             method: "GET",
             headers: {

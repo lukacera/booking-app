@@ -14,6 +14,7 @@ export const SelectedCityProvider: React.FC<{
 
     const [selectedCity, setSelectedCity] = useState<CityType>({} as CityType);
 
+
     return (
         <SelectedCityContext.Provider value={{ selectedCity, setSelectedCity }}>
             {children}
