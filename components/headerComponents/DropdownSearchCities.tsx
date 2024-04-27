@@ -18,7 +18,6 @@ const DropdownSearchCities: React.FC<{
     // Function that handles click on the city
     const handleClick = (city: CityType) => {
         setSelectedCity(city)
-        console.log("Click!")
 
         router.push(`/allhotels/${city.iataCode}`);
     }
