@@ -7,5 +7,5 @@ export const fetchHotels = async (
 ) => {
     const response = await fetch(`/api/hotels/${searchParamsIataCode.city}`);
     const fetchedData = await response.json()
-    setHotels(fetchedData.data.data)
+    fetchedData.data?.data && setHotels(fetchedData.data.data)
 }
