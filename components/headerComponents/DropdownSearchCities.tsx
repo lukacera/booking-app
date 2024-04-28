@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid"
 import { CityType } from "../../types/CityType";
 import { Grid } from "react-loader-spinner"
 import { SelectedCityContext } from "../../contexts/SelectedCityHook";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const DropdownSearchCities: React.FC<{
     citiesHeader: CityType[],
@@ -13,14 +13,12 @@ const DropdownSearchCities: React.FC<{
 }> = ({ citiesHeader, isFetching, searchQuery }) => {
 
     const { setSelectedCity } = useContext(SelectedCityContext)
-    const router = useRouter();
 
     // Function that handles click on the city
     const handleClick = (city: CityType) => {
         setSelectedCity(city)
-
-        router.push(`/allhotels/${city.iataCode}`);
     }
+
     citiesHeader = citiesHeader.filter(city => city.iataCode !== undefined)
     if (isFetching) {
         return (
@@ -39,16 +37,21 @@ const DropdownSearchCities: React.FC<{
             py-5 rounded-b-sm
             shadow-[20px_35px_30px_-15px_rgba(0,0,0,0.3)]">
                 {citiesHeader.map(city => (
-                    <div key={uuidv4()} className="flex 
+                    <Link
+                        href={`/allhotels/${city.iataCode}`}
+                        key={uuidv4()} >
+                        <div className="flex 
                     items-center px-5 gap-5"
-                        onClick={() => handleClick(city)}>
-                        <Image src={`https://countryflagsapi.netlify.app/flag/${city.address.countryCode.toLowerCase()}.svg`}
-                            alt="" width={200} height={200}
-                            className="w-10 rounded-sm" />
-                        <span>
-                            {city.name}, {city.address.countryCode}
-                        </span>
-                    </div>
+                            onClick={() => handleClick(city)}>
+                            <Image src={`https://countryflagsapi.netlify.app/flag/${city.address.countryCode.toLowerCase()}.svg`}
+                                alt="" width={200} height={200}
+                                className="w-10 rounded-sm" />
+                            <span>
+                                {city.name}, {city.address.countryCode}
+                            </span>
+                        </div>
+
+                    </Link>
                 ))}
             </div>
         )

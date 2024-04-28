@@ -12,8 +12,8 @@ import { Lobster } from "next/font/google"
 import CardTop3 from "../components/CardTop3";
 import CardPopularLocation from "../components/CardPopularLocation";
 import Footer from "../components/Footer";
-import { useEffect } from "react";
 import { v4 as uuidv4 } from "uuid"
+
 const lobster = Lobster({ subsets: ["latin"], weight: "400" })
 
 export default function Home() {
