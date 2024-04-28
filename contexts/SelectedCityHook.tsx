@@ -8,12 +8,21 @@ interface SelectedCityType {
 }
 export const SelectedCityContext = createContext<SelectedCityType>({} as SelectedCityType)
 
+const getInitialState = () => {
+    const storedCity = localStorage.getItem('selectedCity')
+    return storedCity ? JSON.parse(storedCity) : {}
+}
+
 export const SelectedCityProvider: React.FC<{
     children: ReactNode
 }> = ({ children }) => {
 
-    const [selectedCity, setSelectedCity] = useState<CityType>({} as CityType);
+    const [selectedCity, setSelectedCity] = useState<CityType>(getInitialState());
 
+    // Save selected city to local storage whenever it changes
+    useEffect(() => {
+        localStorage.setItem('selectedCity', JSON.stringify(selectedCity));
+    }, [selectedCity]);
 
     return (
         <SelectedCityContext.Provider value={{ selectedCity, setSelectedCity }}>
