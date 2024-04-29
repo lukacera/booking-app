@@ -3,7 +3,6 @@
 export const fetchIataCodes = async (searchQuery: string) => {
     // Fetch data using the provided searchQuery
     const response = await fetch(`/api/getIataCode/${searchQuery}`);
-    console.log("Search query: " + searchQuery)
     const data = await response.json();
 
     // If there are no warnings in response, return data

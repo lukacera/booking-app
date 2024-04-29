@@ -29,7 +29,6 @@ export async function middleware(req: NextRequest) {
             const data = await response.json();
 
             const requestHeaders = new Headers(req.headers)
-            console.log(data.access_token)
             requestHeaders.set('x-access-token', data.access_token)
 
 

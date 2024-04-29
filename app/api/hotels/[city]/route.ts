@@ -23,7 +23,6 @@ export const POST = async (req: NextRequest & { body: ExtendedRequestBody }, { p
 
         const joinedAmenities = amenities.join(",");
 
-
         const requestOptions = {
             method: "GET",
             headers: {
@@ -51,16 +50,16 @@ export const POST = async (req: NextRequest & { body: ExtendedRequestBody }, { p
 
         // Filter hotels based on amenities
 
+        console.log("Amenities: ")
+        console.log(amenities)
         const filteredHotels = data.data.filter(hotel => {
             // Check if the hotel has all specified amenities
-            if (hotel.amenities && amenities.length > 0) {
+            if (hotel.amenities || amenities.length > 0) {
                 return amenities.every(amenity => hotel.amenities?.includes(amenity));
             }
             return true
         });
 
-        console.log("Filtered hotels:")
-        console.log(filteredHotels)
         // Return data
         return NextResponse.json({
             data: filteredHotels
