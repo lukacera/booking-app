@@ -1,5 +1,5 @@
 "use client"
-import React, { useContext, useEffect, useState, useTransition } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 import { FaWifi, FaParking, FaBus, FaUmbrellaBeach, FaHotTub, FaSquare } from "react-icons/fa";
@@ -206,10 +206,10 @@ const AllHotels = () => {
                                 </h2>
                             </div>
                             <div className="w-[90%] mx-auto mb-20 flex flex-col gap-10">
-                                {hotels.length > 0 && hotels.map(hotel => (
+                                {hotels?.length > 0 && hotels.map(hotel => (
                                     <SingleHotel hotel={hotel} key={uuidv4()} />
                                 ))}
-                                {hotels.length === 0 && (
+                                {hotels?.length === 0 && (
                                     <div className="flex justify-center items-start pt-32 h-full">
                                         <span className="font-bold text-4xl text-brown_1">
                                             No hotels found!
