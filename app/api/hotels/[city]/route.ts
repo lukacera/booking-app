@@ -19,9 +19,13 @@ export const POST = async (req: NextRequest & { body: ExtendedRequestBody }, { p
         const city = params.city;
 
         // Get amenities from request body
-        const amenities = req.body.amenities || [];
+        const bodyText = await req.text();
+        const requestBody = JSON.parse(bodyText);
 
-        const joinedAmenities = amenities.join(",");
+        // Get filters from parsed request body
+        const amenities: string[] = requestBody.amenities;
+
+        const joinedAmenities = amenities.join(",")
 
         const requestOptions = {
             method: "GET",
@@ -50,8 +54,6 @@ export const POST = async (req: NextRequest & { body: ExtendedRequestBody }, { p
 
         // Filter hotels based on amenities
 
-        console.log("Amenities: ")
-        console.log(amenities)
         const filteredHotels = data.data.filter(hotel => {
             // Check if the hotel has all specified amenities
             if (hotel.amenities || amenities.length > 0) {
