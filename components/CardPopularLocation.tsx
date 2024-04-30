@@ -1,8 +1,9 @@
 "use client"
-import React, { useRef } from "react"
+import React, { useContext, useRef } from "react"
 import Image from "next/image";
 import { Kalam } from "next/font/google";
 import Link from "next/link";
+import { SelectedCityContext } from "../contexts/SelectedCityHook";
 
 const kalam = Kalam({ subsets: ["latin"], weight: "400" })
 
@@ -19,10 +20,13 @@ const CardPopularLocation: React.FC<{ location: any }> = ({ location }) => {
             imageRef.current.classList.remove('scale-125', 'overflow-hidden');
         }
     };
+
+    const { setSelectedCity } = useContext(SelectedCityContext)
     return (
         <Link href={`/allhotels/${location.IATA}`}>
             <div className="flex relative
-                w-[30rem] h-[20rem] overflow-hidden">
+                w-[30rem] h-[20rem] overflow-hidden"
+                onClick={() => setSelectedCity(location.city)}>
                 <Image src={location.image} alt=""
                     width={400} height={400}
                     className="w-full h-full opacity-95 rounded-xl

@@ -1,39 +1,18 @@
 "use client"
-import React, { ReactElement } from "react"
+import React from "react"
 import defaultHotelImg from "../../public/images/defaultHotelPicture.jpg"
 import Image from "next/image";
 import { HotelType } from "../../types/HotelType"
 import { v4 as uuidv4 } from "uuid"
-import { FaStar } from "react-icons/fa";
 import { amenityIcons } from "../../helpers/amenityIcons";
 
 const SingleHotel: React.FC<{ hotel: HotelType }> = ({ hotel }) => {
 
-    // Function that renders number of stars
-    const renderStars = () => {
-        const stars = [];
-        if (hotel.rating) {
-            for (let i = 0; i < hotel.rating; i++) {
-                stars.push(<FaStar key={i} className="text-gold_1" />);
-            }
-        }
+    console.log(hotel.amenities)
 
-        return stars;
-    }
-
-    const fetchData = async () => {
-        try {
-            const res = await fetch(`/api/hotels/${hotel.hotelId}`)
-            const data = await res.json()
-
-        } catch (error) {
-            console.log("Error occured: " + error)
-        }
-    }
     return (
         <div key={uuidv4()} className="flex border-r-2
-        border-gray-200"
-            onClick={() => fetchData()}>
+        border-gray-200">
             <div className="pl-4 pb-4 pt-4 pr-2">
                 <Image alt="" src={defaultHotelImg}
                     width={200} height={200}
@@ -47,15 +26,6 @@ const SingleHotel: React.FC<{ hotel: HotelType }> = ({ hotel }) => {
                     text-brown_1 font-bold pl-2">
                         {hotel.name}
                     </span>
-                    <div className="flex items-center justify-center gap-5">
-                        <div className="flex gap-4 text-xl">
-                            {renderStars().map(star => (
-                                <div key={uuidv4()}>
-                                    {star}
-                                </div>
-                            ))}
-                        </div>
-                    </div>
                 </div>
                 <div className="grid place-items-center">
                     <p className="text-sm pl-">

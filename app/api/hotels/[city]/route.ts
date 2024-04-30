@@ -34,9 +34,11 @@ export const POST = async (req: NextRequest & { body: ExtendedRequestBody }, { p
             },
         };
 
-        let apiUrl = `https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?cityCode=${city}`;
+        let apiUrl = `https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?cityCode=${city}
+        &amenities=AIR_CONDITIONING, RESTAURANT, PARKING, PETS_ALLOWED, AIRPORT_SHUTTLE, BUSINESS_CENTER, WIFI, MEETING_ROOMS, NO_KID_ALLOWED, TENNIS, GOLF, KITCHEN, BEACH, CASINO, JACUZZI, SOLARIUM, MASSAGE, MINIBAR, TELEVISION, ROOM_SERVICE`;
 
         // Append amenities to API URL if there are any
+
         if (amenities.length > 0) {
             apiUrl += `&amenities=${joinedAmenities}`;
         }
@@ -53,15 +55,15 @@ export const POST = async (req: NextRequest & { body: ExtendedRequestBody }, { p
         const data: DataType = await response.json();
 
         // Filter hotels based on amenities
-
         const filteredHotels = data.data.filter(hotel => {
             // Check if the hotel has all specified amenities
-            if (hotel.amenities || amenities.length > 0) {
+            if (amenities.length > 0) {
                 return amenities.every(amenity => hotel.amenities?.includes(amenity));
             }
             return true
         });
 
+        console.log(filteredHotels)
         // Return data
         return NextResponse.json({
             data: filteredHotels

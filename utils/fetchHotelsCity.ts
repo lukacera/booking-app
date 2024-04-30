@@ -4,6 +4,7 @@ import { HotelType } from "../types/HotelType";
 export const fetchHotels = async (
     searchParamsIataCode: any,
     setHotels: Dispatch<SetStateAction<HotelType[]>>,
+    filters: string[]
 ) => {
     const requestOptions = {
         method: "POST",
@@ -11,9 +12,10 @@ export const fetchHotels = async (
             "Content-type": "application/json"
         },
         body: JSON.stringify({
-            amenities: []
+            amenities: filters
         })
     }
+
     const response = await fetch(`/api/hotels/${searchParamsIataCode.city}`, requestOptions);
     const fetchedData = await response.json()
     fetchedData.data && setHotels(fetchedData.data)

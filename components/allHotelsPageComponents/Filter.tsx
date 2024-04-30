@@ -4,10 +4,13 @@ import { FaSquare } from "react-icons/fa";
 
 const Filter: React.FC<{
     filter: FilterType,
-    setSelectedFilters: Dispatch<SetStateAction<string[]>>
-}> = ({ filter, setSelectedFilters }) => {
+    setSelectedFilters: Dispatch<SetStateAction<string[]>>,
+    selectedFilters: string[]
+}> = ({ filter, setSelectedFilters, selectedFilters }) => {
 
-    const [isChecked, setIsChecked] = useState<boolean>(false)
+    const [isChecked, setIsChecked] = useState<boolean>(
+        selectedFilters.some(selFil => selFil === filter.amenity)
+    )
 
     /* Use isChecked for O(1) instead of O(n) */
     const handleClickOfFilter = (filter: FilterType, isChecked: boolean) => {

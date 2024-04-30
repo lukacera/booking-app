@@ -28,19 +28,14 @@ const AllHotels = () => {
     // SelectedFilters will be an array of amenities, so it's string array
     const [selectedFilters, setSelectedFilters] = useState<string[]>([])
 
-    // Fetch hotels by IATA code that is found in URL
+    // Fetch hotels on change of both IATA code and filters 
     useEffect(() => {
-        fetchHotels(searchParamsIataCode, setHotels)
+        fetchHotels(searchParamsIataCode, setHotels, selectedFilters)
         // Show data after 1.2s
         setTimeout(() => {
             setIsLoading(false)
         }, 1200)
-    }, [searchParamsIataCode])
-
-
-    const handleApplyFilters = () => {
-        fetchHotels(searchParamsIataCode, setHotels)
-    }
+    }, [searchParamsIataCode, selectedFilters])
 
     return (
         <>
@@ -56,7 +51,6 @@ const AllHotels = () => {
                     <main className="grid grid-cols-[25%_75%]">
                         {/* Sidebar with all filters */}
                         <SidebarFilters
-                            handleApplyFilters={handleApplyFilters}
                             setSelectedFilters={setSelectedFilters}
                             selectedFilters={selectedFilters} />
                         {/* Main part of page / all hotels */}
