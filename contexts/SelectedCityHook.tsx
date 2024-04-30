@@ -1,10 +1,9 @@
 "use client"
 import { createContext, useState, ReactNode, Dispatch, SetStateAction, useEffect } from 'react';
-import { CityType } from "../types/CityType"
 
 interface SelectedCityType {
-    selectedCity: CityType,
-    setSelectedCity: Dispatch<SetStateAction<CityType>>
+    selectedCity: string,
+    setSelectedCity: Dispatch<SetStateAction<string>>
 }
 export const SelectedCityContext = createContext<SelectedCityType>({} as SelectedCityType)
 
@@ -17,7 +16,7 @@ export const SelectedCityProvider: React.FC<{
     children: ReactNode
 }> = ({ children }) => {
 
-    const [selectedCity, setSelectedCity] = useState<CityType>(getInitialState());
+    const [selectedCity, setSelectedCity] = useState<string>(getInitialState());
 
     // Save selected city to local storage whenever it changes
     useEffect(() => {

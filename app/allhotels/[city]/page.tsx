@@ -65,7 +65,7 @@ const AllHotels = () => {
                                 <h2 className="font-bold text-2xl flex items-center gap-2">
                                     Hotels in
                                     <span className="text-brown_1 italic">
-                                        {selectedCity.name}
+                                        {selectedCity}
                                     </span>
                                 </h2>
                             </div>

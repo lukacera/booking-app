@@ -11,8 +11,6 @@ const Filter: React.FC<{
 
     /* Use isChecked for O(1) instead of O(n) */
     const handleClickOfFilter = (filter: FilterType, isChecked: boolean) => {
-        console.log("Handling click of filter...")
-        console.log(isChecked)
         if (isChecked) {
             setSelectedFilters(prevFilters => (
                 prevFilters.filter(prevFil => prevFil !== filter.amenity)

@@ -16,7 +16,7 @@ const DropdownSearchCities: React.FC<{
 
     // Function that handles click on the city
     const handleClick = (city: CityType) => {
-        setSelectedCity(city)
+        setSelectedCity(city.name)
     }
 
     citiesHeader = citiesHeader.filter(city => city.iataCode !== undefined)

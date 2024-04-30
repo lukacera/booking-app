@@ -2,21 +2,29 @@
     {
         "image": "/images/costaricaImage.jpg",
         "flag": "/images/costaricaFlag.png",
-        "place": "Costarica"
+        "city": "San Jose",
+        "country": "Costarica",
+        "IATA": "SJO"
     },
     {
         "image": "/images/madridImage.jpg",
         "flag": "/images/spainFlag.png",
-        "place": "Spain, Madrid"
+        "city": "Madrid",
+        "country": "Spain",
+        "IATA": "MAD"
     },
     {
         "image": "/images/lisabonImage.jpg",
         "flag": "/images/portugalFlag.png",
-        "place": "Portugal, Lisabon"
+        "city": "Lisbon",
+        "country": "Portugal",
+        "IATA": "LIS"
     },
     {
         "image": "/images/newYorkImage.jpg",
         "flag": "/images/usaFlag.png",
-        "place": "USA, New York"
+        "city": "New York",
+        "country": "USA",
+        "IATA": "NYC"
     }
 ]

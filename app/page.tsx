@@ -18,7 +18,6 @@ const lobster = Lobster({ subsets: ["latin"], weight: "400" })
 
 export default function Home() {
 
-
   return (
     <div className="min-h-screen">
       {/* Header div */}
@@ -39,7 +38,6 @@ export default function Home() {
               {helperHotels.map((hotel, index) => (
                 <div key={uuidv4()}>
                   <CardTop3 hotel={hotel} index={index} />
-
                 </div>
               ))}
             </div>

@@ -1,10 +1,12 @@
 "use client"
 
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import Image from "next/image";
 import { Outfit } from "next/font/google";
 import { IoArrowUpOutline } from "react-icons/io5";
 import { GiPodium } from "react-icons/gi";
+import Link from "next/link";
+import { SelectedCityContext } from "../contexts/SelectedCityHook";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -18,6 +20,8 @@ const CardTop3: React.FC<{ hotel: any, index: number }> = ({ hotel, index }) => 
             setExpanded(!expanded);
         }
     };
+
+    const { setSelectedCity } = useContext(SelectedCityContext)
 
     return (
         <div className="grid place-items-center gap-5">
@@ -38,14 +42,20 @@ const CardTop3: React.FC<{ hotel: any, index: number }> = ({ hotel, index }) => 
                         <div className="flex flex-col justify-between h-full
                             pb-20">
                             <h3 className="pt-3 text-2xl text-orange_1">
-                                {hotel.name.length > 20 ? <>{hotel.name.slice(0, 20)}...</> : <>{hotel.name} </>}
+                                {hotel.country}, {hotel.city}
                             </h3>
                             {hotel.description.length > 200 ? (
                                 <p className="px-5 text-sm">{hotel.description.slice(0, 200)}...</p>
                             ) : (
                                 <p className="px-5">{hotel.description}</p>
                             )}
-                            <span className="p-1 underline">Click for more info</span>
+                            <Link href={`/allhotels/${hotel.IATA}`}
+                                onClick={() => setSelectedCity(hotel.city)}>
+                                <span className="p-1 underline">
+                                    Click to see hotels
+                                </span>
+                            </Link>
+
                         </div>
                     )}
                     {/* Arrow */}
