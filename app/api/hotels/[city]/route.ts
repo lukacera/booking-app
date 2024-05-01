@@ -63,7 +63,6 @@ export const POST = async (req: NextRequest & { body: ExtendedRequestBody }, { p
             return true
         });
 
-        console.log(filteredHotels)
         // Return data
         return NextResponse.json({
             data: filteredHotels
