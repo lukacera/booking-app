@@ -38,14 +38,14 @@ export const GET = async (req: NextRequest, { params }: { params: { hotel: strin
         // If ratings exist for this hotel, return them along with hotel data to the client side
         if (dataRatings.data) {
             return NextResponse.json({
-                data: hotel,
+                hotel: hotel,
                 ratings: dataRatings.data
             });
         }
 
         // Return just hotel data to the client side, in case ratings do not exist for this hotel
         return NextResponse.json({
-            data: hotel
+            hotel: hotel
         });
 
     } catch (error) {

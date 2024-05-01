@@ -35,7 +35,7 @@ export const POST = async (req: NextRequest & { body: ExtendedRequestBody }, { p
         };
 
         let apiUrl = `https://test.api.amadeus.com/v1/reference-data/locations/hotels/by-city?cityCode=${city}
-        &amenities=AIR_CONDITIONING, RESTAURANT, PARKING, PETS_ALLOWED, AIRPORT_SHUTTLE, BUSINESS_CENTER, WIFI, MEETING_ROOMS, NO_KID_ALLOWED, TENNIS, GOLF, KITCHEN, BEACH, CASINO, JACUZZI, SOLARIUM, MASSAGE, MINIBAR, TELEVISION, ROOM_SERVICE`;
+        &amenities=AIR_CONDITIONING,RESTAURANT,PARKING,PETS_ALLOWED,AIRPORT_SHUTTLE,BUSINESS_CENTER,WIFI,MEETING_ROOMS,NO_KID_ALLOWED,TENNIS,GOLF,KITCHEN,BEACH,CASINO,JACUZZI,SOLARIUM,MASSAGE,MINIBAR,TELEVISION,ROOM_SERVICE`;
 
         // Append amenities to API URL if there are any
 

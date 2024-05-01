@@ -12,8 +12,16 @@ export const fetchHotel = async (
 
     // Response sends back hotel in data field
     const fetchedData = await response.json()
-    const hotel = fetchedData.data
 
+    console.log(fetchedData)
+    if (fetchedData.ratings) {
+        return {
+            hotel: fetchedData.hotel[0],
+            ratings: fetchedData.ratings
+        }
+    }
     // Data is array, so return first element of it
-    return hotel[0]
+    return {
+        hotel: fetchedData.hotel[0]
+    }
 }
