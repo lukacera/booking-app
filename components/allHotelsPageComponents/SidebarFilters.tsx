@@ -8,7 +8,6 @@ const SidebarFilters: React.FC<{
     selectedFilters: string[]
 }> = ({ setSelectedFilters, selectedFilters }) => {
 
-    console.log("Refresh...")
     return (
         <div className="w-full flex flex-col items-center pt-32">
             <h4 className="font-bold text-xl mb-10">

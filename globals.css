@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+.CircularProgressbar-text {
+   alignment-baseline: middle;
+   text-anchor: middle;
+}
