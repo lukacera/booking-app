@@ -24,8 +24,8 @@ const CardPopularLocation: React.FC<{ location: any }> = ({ location }) => {
     const { setSelectedCity } = useContext(SelectedCityContext)
     return (
         <Link href={`/allhotels/${location.IATA}`}>
-            <div className="flex relative
-                w-[30rem] h-[20rem] overflow-hidden"
+            <div className="flex relative w-[calc(100%-3rem)] mx-auto aspect-square
+                md:w-[30rem] md:h-[20rem] overflow-hidden"
                 onClick={() => setSelectedCity(location.city)}>
                 <Image src={location.image} alt=""
                     width={400} height={400}

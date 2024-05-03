@@ -34,7 +34,8 @@ export default function Home() {
             <h3 className={`text-4xl font-bold text-orange_1 ${lobster.className}`}>
               Our top picks
             </h3>
-            <div className="flex gap-3">
+            <div className="flex flex-col gap-6
+            lg:flex-row">
               {helperHotels.map((hotel, index) => (
                 <div key={uuidv4()}>
                   <CardTop3 hotel={hotel} index={index} />
@@ -45,11 +46,13 @@ export default function Home() {
         </div>
 
         {/* Popular locations container */}
-        <div className="my-80 w-[70%] mx-auto grid place-items-center gap-12">
+        <div className="mt-[70rem] mb-[5rem] grid place-items-center 
+        gap-12 lg:mt-[20rem]">
           <span className={`text-3xl ${lobster.className}`}>
             Trending locations
           </span>
-          <div className="grid grid-cols-2 gap-5">
+          <div className="flex flex-col
+          lg:grid lg:grid-cols-2 gap-5">
             {helperLocations.map(location => (
               <div key={uuidv4()} >
                 <CardPopularLocation location={location} />

@@ -1,12 +1,11 @@
 "use client"
 
-import React, { useContext, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { Outfit } from "next/font/google";
 import { IoArrowUpOutline } from "react-icons/io5";
 import { GiPodium } from "react-icons/gi";
 import Link from "next/link";
-import { SelectedCityContext } from "../contexts/SelectedCityHook";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -23,10 +22,12 @@ const CardTop3: React.FC<{ hotel: any, index: number }> = ({ hotel, index }) => 
 
     return (
         <div className="grid place-items-center gap-5">
-            <div className="text-white w-[20rem] h-[22rem] rounded-xl relative overflow-hidden">
+            <div className="text-white rounded-xl relative overflow-hidden
+            w-[20rem] h-[22rem]">
 
                 {/* Place image to be absolute */}
-                <Image src={hotel.image} alt="" width={400} height={400} className="w-full h-full absolute top-0" />
+                <Image src={hotel.image} alt="" width={400} height={400}
+                    className="w-full h-full absolute top-0" />
                 {/* Text part of hotel's card */}
                 <div ref={descRef}
                     className={`w-full bg-black transition-height duration-300 ease-out
