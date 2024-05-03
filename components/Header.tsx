@@ -49,20 +49,22 @@ const Header: React.FC = () => {
     return (
         <header className="relative">
             <div className="fixed top-0 right-0 w-full bg-brown_1 
-            px-20 z-10 h-[8.5rem] grid place-items-center">
-                <div className="flex justify-start absolute top-7 left-20">
+            z-10 h-[8.5rem] grid place-items-center
+            md:px-20">
+                <div className="flex justify-start md:absolute top-7 left-20">
                     <Link href={"/"}>
                         <Logo />
                     </Link>
                 </div>
 
-                <div className="flex items-center gap-4 bg-white py-4 px-3 
-                rounded-lg relative">
+                <div className="flex items-center gap-4 bg-white
+                rounded-lg relative py-2 max-w-[calc(100%-4rem)] px-2">
                     <FaLocationDot className="text-black text-[1.2rem]" />
                     <input
                         type="text"
                         className="bg-transparent outline-none text-black 
-                        placeholder:text-black"
+                        placeholder:text-black  w-full
+                        sm:placeholder:text-base"
                         spellCheck={false}
                         placeholder="Where do you want to go?"
                         onChange={handleChange} // Attach the debounced function to the onChange event
@@ -76,9 +78,6 @@ const Header: React.FC = () => {
                         citiesHeader={citiesHeader}
                         isFetching={isFetching}
                         searchQuery={searchQuery} />
-
-
-
                 </div>
             </div>
         </header>
