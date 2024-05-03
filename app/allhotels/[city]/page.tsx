@@ -30,11 +30,12 @@ const AllHotels = () => {
 
     // Fetch hotels on change of both IATA code and filters 
     useEffect(() => {
+        setIsLoading(true)
         fetchHotels(searchParamsIataCode, setHotels, selectedFilters)
-        // Show data after 1.2s
+        // Show data after 1s
         setTimeout(() => {
             setIsLoading(false)
-        }, 1200)
+        }, 1000)
     }, [searchParamsIataCode, selectedFilters])
 
     return (
