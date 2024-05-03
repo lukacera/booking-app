@@ -106,7 +106,6 @@ const HotelPage: React.FC = () => {
                                             apiKey="AIzaSyBLyru7rTxYq0jfAfMtM9Z1gjt4_4gwMto"
                                             defaultCenter={{ lat: hotelData.geoCode.latitude, lng: hotelData.geoCode.longitude }}
                                             defaultZoom={15}
-                                            onChange={(map) => console.log('Map moved', map)}
                                         >
                                             <EmptyComponent
                                                 lat={hotelData.geoCode.latitude}

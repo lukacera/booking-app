@@ -2,22 +2,25 @@
     {
         "image": "/images/hotel1.jpg",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida nisi sit amet velit pretium, ac tristique justo finibus. Mauris rutrum quam non consequat bibendum. Vivamus ullamcorper, turpis id maximus tincidunt, libero neque commodo est, vel posuere tortor justo sit amet nunc. Sed vehicula, lacus id mollis lobortis, purus lorem ultrices lorem, id fringilla justo mi a ligula.",
-        "city": "San Jose",
-        "country": "Costarica",
-        "IATA": "SJO"
+        "place": "Moscow",
+        "hotel": "RENAISSANCE MONARCH CENTRE",
+        "IATA": "MOW",
+        "HOTELID": "BRMOWBRB"
     },
     {
         "image": "/images/hotel2.jpg",
         "description": "Phasellus vitae ipsum felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquet dolor sit amet velit suscipit dapibus. Vivamus elementum, mi eget accumsan efficitur, neque lacus consequat tortor, id sagittis magna odio id odio. Aliquam erat volutpat.",
-        "city": "Madrid",
-        "country": "Spain",
-        "IATA": "MAD"
+        "hotel": "Kasina",
+        "place": "Belgrade",
+        "IATA": "BEG",
+        "HOTELID": "ACBEGF20"
     },
     {
         "image": "/images/hotel3.jpg",
         "description": "Fusce varius efficitur purus vitae facilisis. Maecenas malesuada lorem sed risus ultrices, sed venenatis orci congue. Nullam tincidunt auctor nisl, sed consequat velit fermentum eget. Integer interdum sodales urna at tincidunt. Sed gravida, eros sit amet posuere efficitur, libero enim iaculis augue, nec convallis dui purus vel metus.",
-        "city": "Lisbon",
-        "country": "Portugal",
-        "IATA": "LIS"
+        "hotel": "BEST WESTERN PREMIER COUTURE",
+        "place": "Amsterdam",
+        "IATA": "AMS",
+        "HOTELID": "BWAMS730"
     }
 ]

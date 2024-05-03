@@ -1,9 +1,13 @@
 import React from "react"
+import { FaLocationDot } from "react-icons/fa6";
 
-const EmptyComponent: React.FC<{ text: string }> = ({ text }) => {
+const EmptyComponent: React.FC<{
+    lat: number;
+    lng: number;
+}> = ({ lat, lng }) => {
     return (
         <div>
-            {text}
+            <FaLocationDot className="text-[2.5rem] text-red-600" />
         </div>
     )
 };

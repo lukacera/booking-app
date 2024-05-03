@@ -21,8 +21,6 @@ const CardTop3: React.FC<{ hotel: any, index: number }> = ({ hotel, index }) => 
         }
     };
 
-    const { setSelectedCity } = useContext(SelectedCityContext)
-
     return (
         <div className="grid place-items-center gap-5">
             <div className="text-white w-[20rem] h-[22rem] rounded-xl relative overflow-hidden">
@@ -42,17 +40,16 @@ const CardTop3: React.FC<{ hotel: any, index: number }> = ({ hotel, index }) => 
                         <div className="flex flex-col justify-between h-full
                             pb-20">
                             <h3 className="pt-3 text-2xl text-orange_1">
-                                {hotel.country}, {hotel.city}
+                                {hotel.hotel}, {hotel.place}
                             </h3>
                             {hotel.description.length > 200 ? (
                                 <p className="px-5 text-sm">{hotel.description.slice(0, 200)}...</p>
                             ) : (
                                 <p className="px-5">{hotel.description}</p>
                             )}
-                            <Link href={`/allhotels/${hotel.IATA}`}
-                                onClick={() => setSelectedCity(hotel.city)}>
+                            <Link href={`/allhotels/${hotel.IATA}/${hotel.HOTELID}`}>
                                 <span className="p-1 underline">
-                                    Click to see hotels
+                                    Click to see hotel
                                 </span>
                             </Link>
 

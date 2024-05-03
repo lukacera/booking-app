@@ -9,7 +9,17 @@ export const SelectedCityContext = createContext<SelectedCityType>({} as Selecte
 
 const getInitialState = () => {
     const storedCity = localStorage.getItem('selectedCity')
-    return storedCity ? JSON.parse(storedCity) : {}
+    console.log("Stored city:")
+    console.log(storedCity)
+    if (storedCity) {
+        try {
+            return JSON.parse(storedCity);
+        } catch (error) {
+            console.error('Error parsing JSON:', error);
+            // Handle the error or return a default value as necessary
+        }
+    }
+    return {};
 }
 
 export const SelectedCityProvider: React.FC<{
