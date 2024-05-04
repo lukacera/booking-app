@@ -3,16 +3,12 @@ export type RatingType = {
     overallRating: number,
     type: string,
     sentiments?: {
-        staff: number,
-        location: number,
-        service: number,
-        roomComforts: number,
-        internet: number,
-        sleepQuality: number,
-        valueForMoney: number,
-        facilities: number,
-        catering: number,
-        pointsOfInterest: number
+        catering: number;
+        facilities: number;
+        internet: number;
+        location: number;
+        staff: number;
+        valueForMoney: number;
     }
 
 }
