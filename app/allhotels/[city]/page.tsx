@@ -2,10 +2,7 @@
 import React, { useContext, useEffect, useState } from "react"
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
-
-
 import { v4 as uuidv4 } from "uuid"
-
 import SingleHotel from "../../../components/allHotelsPageComponents/SingleHotel";
 import { HotelType } from "../../../types/HotelType";
 import { useParams } from "next/navigation";
@@ -13,6 +10,7 @@ import { fetchHotels } from "../../../utils/fetchHotelsCity";
 import { SelectedCityContext } from "../../../contexts/SelectedCityHook";
 import { Audio } from "react-loader-spinner"
 import SidebarFilters from "../../../components/allHotelsPageComponents/SidebarFilters";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 const AllHotels = () => {
 
@@ -43,28 +41,30 @@ const AllHotels = () => {
             <Header />
             {/* Set mt to 8.5 and calculate height based on height of header */}
             <div className={`mt-[8.5rem] min-h-[calc(100vh-8.5rem)]
-                bg-white w-[80vw] mx-auto mb-32 
+                bg-white sm:w-[80vw] sm:mx-auto mb-32 
                 ${isLoading && "grid place-items-center"}`}>
                 {isLoading && (
                     <Audio width={150} height={150} color="#ebc417" />
                 )}
                 {!isLoading && (
-                    <main className="grid grid-cols-[25%_75%]">
+                    <main className="sm:grid sm:grid-cols-[25%_75%]">
                         {/* Sidebar with all filters */}
                         <SidebarFilters
                             setSelectedFilters={setSelectedFilters}
                             selectedFilters={selectedFilters} />
-                        {/* Main part of page / all hotels */}
+                        {/* Main part of page */}
                         <div className="grid grid-rows-[10rem,auto]">
-                            <div className="grid place-items-center">
-                                <h2 className="font-bold text-2xl flex items-center gap-2">
+                            <div className="relative w-full flex justify-center">
+                                <GiHamburgerMenu className="absolute 
+                                top-7 left-5 text-2xl" />
+                                <h2 className="font-bold text-2xl flex items-center gap-1">
                                     Hotels in
                                     <span className="text-brown_1 italic">
                                         {selectedCity}
                                     </span>
                                 </h2>
                             </div>
-                            <div className="w-[90%] mx-auto mb-20 flex flex-col gap-10">
+                            <div className="sm:w-[90%] sm:mx-auto mb-20 flex flex-col gap-10">
                                 {hotels?.length > 0 && hotels.map(hotel => (
                                     <SingleHotel hotel={hotel} key={uuidv4()} />
                                 ))}

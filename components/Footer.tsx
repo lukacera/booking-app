@@ -6,8 +6,9 @@ import { FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className="w-full min-h-[10rem] h-auto bg-brown_1 text-white
-        grid grid-cols-3 relative">
+        <footer className="min-h-[10rem] h-auto bg-brown_1 text-white
+        grid relative px-5 pt-2
+        md:grid-cols-3 md:px-0 md:pt-0">
             <div className="grid place-items-center">
                 <Logo />
             </div>

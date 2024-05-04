@@ -9,7 +9,8 @@ const SidebarFilters: React.FC<{
 }> = ({ setSelectedFilters, selectedFilters }) => {
 
     return (
-        <div className="w-full flex flex-col items-center pt-32">
+        <div className="w-full flex-col items-center pt-32
+        hidden sm:flex">
             <h4 className="font-bold text-xl mb-10">
                 All filters
             </h4>

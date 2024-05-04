@@ -60,7 +60,7 @@ const DropdownSearchCities: React.FC<{
     else if (!isFetching && citiesHeader.length === 0 && searchQuery.length > 2) {
         return (
             <div className="absolute top-16 left-0 bg-white z-10
-            w-full py-3 text-center rounded-sm">
+            w-full py-3 text-center rounded-b-sm shadow-[20px_35px_30px_-15px_rgba(0,0,0,0.3)]">
                 <span className="font-bold">
                     No results found!
                 </span>

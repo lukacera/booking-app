@@ -58,7 +58,7 @@ const Header: React.FC = () => {
                 </div>
 
                 <div className="flex items-center gap-4 bg-white
-                rounded-lg relative py-2 max-w-[calc(100%-4rem)] px-2">
+                rounded-lg relative py-4 max-w-[calc(100%-4rem)] px-2">
                     <FaLocationDot className="text-black text-[1.2rem]" />
                     <input
                         type="text"

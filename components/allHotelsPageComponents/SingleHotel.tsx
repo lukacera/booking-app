@@ -11,12 +11,27 @@ const SingleHotel: React.FC<{ hotel: HotelType }> = ({ hotel }) => {
     return (
         <Link href={`/allhotels/${hotel.iataCode}/${hotel.hotelId}`}>
             <div className="flex border-r-2
-        border-gray-200">
-                <div className="pl-4 pb-4 pt-4 pr-2">
-                    <Image alt="" src={defaultHotelImg}
-                        width={200} height={200}
-                        className="w-[15rem] aspect-square rounded-md"
-                        title={hotel.name} />
+        border-gray-200 h-auto">
+                <div>
+                    <div className="pl-4 pb-4 pt-4 pr-2">
+                        <Image alt="" src={defaultHotelImg}
+                            width={200} height={200}
+                            className="w-[15rem] aspect-square rounded-md"
+                            title={hotel.name} />
+                    </div>
+                    <div className="flex gap-2 px-3 pt-10
+                                    pb-4 flex-col sm:flex-row items-center
+                                    sm:justify-center 2xl:hidden">
+                        {hotel.amenities?.map(amenity => (
+                            amenityIcons[amenity] ? (
+                                <div key={uuidv4()} className="text-xl
+                            p-2 rounded-2xl bg-brown_1
+                            text-white">
+                                    {amenityIcons[amenity]}
+                                </div>
+                            ) : null
+                        ))}
+                    </div>
                 </div>
                 <div className="grid grid-rows-[25%_50%_25%] w-full">
                     {/* Container for hotel name and stars*/}
@@ -27,7 +42,7 @@ const SingleHotel: React.FC<{ hotel: HotelType }> = ({ hotel }) => {
                         </span>
                     </div>
                     <div className="grid place-items-center">
-                        <p className="text-sm pl-">
+                        <p className="text-sm pl-2">
                             Discover a luxurious retreat nestled in the heart
                             of a bustling city. With breathtaking views of
                             the skyline, this hotel offers an unforgettable
@@ -40,12 +55,12 @@ const SingleHotel: React.FC<{ hotel: HotelType }> = ({ hotel }) => {
                         </p>
                     </div>
                     {/*
-                Container for Amenities of hotel
-                It will display logo only if it is found in
-                amenityIcons map
-                */}
-                    <div className="flex items-end gap-2 px-3
-                pb-4">
+                        Container for Amenities of hotel
+                        It will display logo only if it is found in
+                        amenityIcons map
+                    */}
+                    <div className="items-end gap-2 px-3
+                                    pb-4 hidden 2xl:flex">
                         {hotel.amenities?.map(amenity => (
                             amenityIcons[amenity] ? (
                                 <div key={uuidv4()} className="text-xl
