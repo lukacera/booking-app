@@ -9,13 +9,13 @@ const Ratings: React.FC<{
     ratings: RatingType
 }> = ({ ratings }) => {
     return (
-        <div className="grid sm:grid-cols-[30%_70%] 
+        <div className="grid gap-10 sm:gap-0 sm:grid-cols-[30%_70%] 
                     py-10 w-[calc(100%-5px)] mx-auto">
             {/* Container for main overall rating */}
             <div className="flex flex-col items-center 
                         justify-center gap-5 border-r-2 
                         bg-brown_1 text-white
-                        rounded-xl w-full">
+                        rounded-xl w-full py-5 sm:py-0">
                 <span className="font-bold text-2xl">
                     Overall rating
                 </span>
@@ -49,7 +49,7 @@ const Ratings: React.FC<{
                             ratingName={ratingType} />
                     ))
                 ) : (
-                    ["Catering", "Facilities", "Internet", "Location", "Staff", "ValueForMoney"]
+                    ["Catering", "Facilities", "Internet", "Location", "Staff", "Value"]
                         .map((name, index) => (
                             <SingleRating key={index}
                                 ratings={ratings}

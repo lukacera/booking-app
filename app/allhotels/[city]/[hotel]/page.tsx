@@ -52,7 +52,8 @@ const HotelPage: React.FC = () => {
         <>
             <Header />
             <main className={`mt-[8.5rem] min-h-[calc(100vh-8.5rem)]
-                    bg-white w-[80vw] mx-auto mb-28 grid ${nunito.className}`}>
+                    bg-white mx-auto mb-28 grid ${nunito.className}
+                    md:w-[80vw]`}>
                 {!isLoaded && (
                     <div className="w-full h-full grid place-items-center">
                         <Audio color="#ebc417" />
@@ -60,20 +61,22 @@ const HotelPage: React.FC = () => {
 
                 )}
                 {isLoaded && (
-                    <div className="w-full  h-full flex flex-col
+                    <div className="w-full h-full flex flex-col
                     gap-10">
                         {/* Image and name of hotel */}
                         <div className="grid place-items-center pt-10">
-                            <h3 className="font-bold text-4xl">
+                            <h3 className="font-bold text-2xl sm:text-4xl">
                                 {hotelData.name}
                             </h3>
-                            <div className="flex items-center justify-center gap-10
-                            py-20">
+                            <div className="flex items-center justify-center 
+                            gap-10 py-20 flex-col xl:flex-row">
                                 <div className="flex justify-center
-                                items-center gap-3">
+                                items-center gap-3 w-[calc(100%-10px)] mx-auto
+                                xl:w-full">
                                     <Image alt="" src={InsideOfHotel}
                                         width={280} height={280}
-                                        className="w-80 h-auto rounded-lg shadow-md" />
+                                        className="w-72 h-auto 
+                                        rounded-lg shadow-md" />
                                     <div className="flex flex-col gap-5">
                                         <Image alt="" src={OutsideHotel}
                                             width={280} height={280}
@@ -83,7 +86,7 @@ const HotelPage: React.FC = () => {
                                             className="w-80 h-auto aspect-auto rounded-lg shadow-md" />
                                     </div>
                                 </div>
-                                <div className="flex flex-col gap-10 items-center">
+                                <div className="flex flex-col gap-10 items-center w-full">
                                     <div className="flex items-center gap-5">
                                         <div className="flex items-center gap-2">
                                             <span className="font-bold text-[1.3rem]">
@@ -101,7 +104,8 @@ const HotelPage: React.FC = () => {
                                             Sunset Avenue, 123
                                         </span>
                                     </div>
-                                    <div className="h-80 w-[30rem] relative">
+                                    <div className="h-80 relative w-[calc(100%-1rem)]
+                                    md:w-[30rem]">
                                         <GoogleMap
                                             apiKey="AIzaSyBLyru7rTxYq0jfAfMtM9Z1gjt4_4gwMto"
                                             defaultCenter={{ lat: hotelData.geoCode.latitude, lng: hotelData.geoCode.longitude }}

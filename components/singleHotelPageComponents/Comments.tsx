@@ -20,7 +20,7 @@ const Comments = () => {
     <div className="w-full grid place-items-center">
 
       <div className="flex items-center gap-10 border-2 border-brown_1 
-        px-20 py-10 max-h-[10rem] rounded-lg relative">
+        px-20 py-10 xl:max-h-[10rem] rounded-lg relative">
 
         <MdArrowBackIosNew className="p-2 bg-brown_1 text-gold_1 rounded-lg
         text-[3rem] absolute top-[40%] left-5 cursor-pointer"
