@@ -24,7 +24,8 @@ const DropdownSearchCities: React.FC<{
         return (
             <div className="absolute top-16 left-0 bg-white z-10
                     w-full py-12 rounded-sm
-                    grid place-items-center">
+                    grid place-items-center
+                    shadow-[20px_35px_30px_-15px_rgba(0,0,0,0.3)]">
                 <Grid width={50} height={50} color="#ebc417" />
             </div>
         )

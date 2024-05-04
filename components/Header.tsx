@@ -49,9 +49,9 @@ const Header: React.FC = () => {
     return (
         <header className="relative">
             <div className="fixed top-0 right-0 w-full bg-brown_1 
-            z-10 h-[8.5rem] grid place-items-center
-            md:px-20">
-                <div className="flex justify-start md:absolute top-7 left-20">
+            z-10 min-h-[8.5rem] grid place-items-center gap-2
+            lg:px-20 py-2">
+                <div className="flex justify-start lg:absolute top-7 left-20">
                     <Link href={"/"}>
                         <Logo />
                     </Link>
