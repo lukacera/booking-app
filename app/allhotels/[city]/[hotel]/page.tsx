@@ -65,19 +65,20 @@ const HotelPage: React.FC = () => {
                     gap-10">
                         {/* Image and name of hotel */}
                         <div className="grid place-items-center pt-10">
-                            <h3 className="font-bold text-2xl sm:text-4xl">
+                            <h3 className="font-bold text-2xl sm:text-4xl 
+                            max-w-[calc(100%-5rem)] text-center">
                                 {hotelData.name}
                             </h3>
                             <div className="flex items-center justify-center 
-                            gap-10 py-20 flex-col xl:flex-row">
+                            gap-10 py-20 flex-col xl:flex-row w-full">
                                 <div className="flex justify-center
-                                items-center gap-3 w-[calc(100%-10px)] mx-auto
+                                items-center gap-3 sm:w-[70%] mx-auto
                                 xl:w-full">
                                     <Image alt="" src={InsideOfHotel}
                                         width={280} height={280}
-                                        className="w-72 h-auto 
+                                        className="w-[calc(100%-2rem)] sm:w-72 h-auto 
                                         rounded-lg shadow-md" />
-                                    <div className="flex flex-col gap-5">
+                                    <div className="flex-col gap-5 hidden sm:flex">
                                         <Image alt="" src={OutsideHotel}
                                             width={280} height={280}
                                             className="w-80 h-auto aspect-auto rounded-lg shadow-md" />

@@ -86,7 +86,8 @@ const AllHotels = () => {
                                             </span>
                                         </h2>
                                     </div>
-                                    <div className="sm:w-[90%] sm:mx-auto mb-20 flex flex-col gap-10">
+                                    <div className="sm:w-[90%] sm:mx-auto 
+                                    mb-20 flex flex-col gap-20 sm:gap-10">
                                         {hotels?.length > 0 && hotels.map(hotel => (
                                             <SingleHotel hotel={hotel} key={uuidv4()} />
                                         ))}
