@@ -46,7 +46,7 @@ export default function Home() {
         </div>
 
         {/* Popular locations container */}
-        <div className="mt-[70rem] mb-[5rem] grid place-items-center 
+        <div className="mt-[75rem] mb-[5rem] grid place-items-center 
         gap-12 lg:mt-[20rem]">
           <span className={`text-3xl ${lobster.className}`}>
             Trending locations
