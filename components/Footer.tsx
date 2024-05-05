@@ -32,7 +32,8 @@ const Footer = () => {
                     lifetime.
                 </p>
             </div>
-            <div className="flex flex-col items-center my-5 gap-20 text-xl">
+            <div className="flex flex-col items-center gap-5 text-xl mb-20
+            md:gap-20 md:my-5">
                 <span>
                     Links to our social media
                 </span>
